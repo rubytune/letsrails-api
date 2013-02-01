@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  person: 
+  encrypted_number: MyString
+  cardholder_name: MyString
+  expiration_month: 1
+  expiration_year: 1
+  primary: false
+
+two:
+  person: 
+  encrypted_number: MyString
+  cardholder_name: MyString
+  expiration_month: 1
+  expiration_year: 1
+  primary: false

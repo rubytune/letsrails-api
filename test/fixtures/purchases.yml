@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  deal: 
+  person: 
+  credit_card: 
+  aasm_state: MyString
+
+two:
+  deal: 
+  person: 
+  credit_card: 
+  aasm_state: MyString

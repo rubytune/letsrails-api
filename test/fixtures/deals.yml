@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  city: 
+  merchant: 
+  title: MyString
+  description: MyText
+  image_url: MyString
+  offer_starts_at: 2013-01-31 18:32:13
+  offer_ends_at: 2013-01-31 18:32:13
+
+two:
+  city: 
+  merchant: 
+  title: MyString
+  description: MyText
+  image_url: MyString
+  offer_starts_at: 2013-01-31 18:32:13
+  offer_ends_at: 2013-01-31 18:32:13

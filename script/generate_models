@@ -1,0 +1,12 @@
+#!/bin/sh
+
+rails g model country name:string code:string string:language
+rails g model city country:belongs_to name:string slug:string
+rails g model merchant name:string url:string
+rails g model deal city:belongs_to merchant:belongs_to title:string description:text offer_starts_at:datetime offer_ends_at:datetime
+rails g model deal_image deal:belongs_to url:string width:integer height:integer
+rails g model option deal:belongs_to title:string price:decimal value:decimal primary:boolean
+rails g model person email:string first_name:string last_name:string password_digest:string
+rails g model credit_card person:belongs_to encrypted_number:string cardholder_name:string expiration_month:integer expiration_year:integer primary:boolean
+rails g model purchase deal:belongs_to person:belongs_to credit_card:belongs_to aasm_state:string
+rails g model voucher purchase:belongs_to option:belongs_to customer_code:string redeemed_at:datetime

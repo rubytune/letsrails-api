@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  deal: 
+  title: MyString
+  price: 9.99
+  value: 9.99
+  primary: false
+
+two:
+  deal: 
+  title: MyString
+  price: 9.99
+  value: 9.99
+  primary: false
