@@ -25,7 +25,7 @@ def get_deal(deal_id)
 end
 
 doc = get_html "http://es.letsbonus.com/ocio/barcelona"
-doc.css("#listOffers article").each do |a|
+doc.css(".listOffers article").each do |a|
   deal = barcelona.deals.build
   deal.short_title = a.at_css('section h3').text
   deal.deal_images.build(:url => a.at_css('figure a img')['src'])
@@ -59,4 +59,4 @@ doc.css("#listOffers article").each do |a|
 
 end
 
-paul.purchases.create!(:option => Option.first, :credit_cards => paul.credit_cards.first, :quantity => 2)
+paul.purchases.create!(:option => Option.first, :credit_card => paul.credit_cards.first, :quantity => 2)
