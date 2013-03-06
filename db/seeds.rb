@@ -1,10 +1,26 @@
 # encoding: UTF-8
-spain = Country.find_or_create_by_code!("ES", :name => "España", :language => "es")
-italy = Country.find_or_create_by_code!("IT", :name => "Italia", :language => "it")
+
+# Ripped from migration file
+spain = Country.create(name: 'España', language: 'es', code: 'ES')
+ar = Country.create(name: 'Argentina', language: 'ar', code: 'AR')
+italy = Country.create(name: 'Italia', language: 'it', code: 'IT')
+pt = Country.create(name: 'Portugal', language: 'pt', code: 'PT')
+cl = Country.create(name: 'Chile', language: 'cl', code: 'CL')
+
+cl.cities.create(name: 'Santiago', slug: 'santiago', time_zone: 'Pacific')
+cl.cities.create(name: 'Copiapó', slug: 'copiapo', time_zone: 'Pacific')
+
+pt.cities.create(name: 'Lisboa', slug: 'lisboa', time_zone: 'Pacific')
+pt.cities.create(name: 'Porto', slug: 'porto', time_zone: 'Pacific')
 
 barcelona = City.find_or_create_by_slug!("barcelona", :country => spain, :name => "Barcelona", :time_zone => "Europe/Madrid")
-madrid = City.find_or_create_by_slug!("madrid", :country => spain, :name => "Madrid", :time_zone => "Europe/Madrid")
-rome = City.find_or_create_by_slug!("rome", :name => "Rome", :country => italy, :time_zone => "Europe/Rome")
+madrid = spain.cities.create(name: 'Madrid', slug: 'madrid', time_zone: 'Pacific')
+
+rome = italy.cities.create(name: 'Roma', slug: 'roma', time_zone: 'Pacific')
+cl.cities.create(name: 'Milano', slug: 'milano', time_zone: 'Pacific')
+
+ar.cities.create(name: 'Buenos Aires Centro', slug: 'buenos-aires-centro', time_zone: 'Pacific')
+ar.cities.create(name: 'Chaco', slug: 'chaco', time_zone: 'Pacific')
 
 paul = Person.create!(:first_name => "Paul", :last_name => "Barry", :email => "paul.barry@livingsocial.com", :password => "password", :password_confirmation => "password")
 paul.credit_cards.create!(:number => "4111 1111 1111 1111", :cardholder_name => "Paul Barry", :expiration_month => "02", :expiration_year => "15")
