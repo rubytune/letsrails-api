@@ -17,7 +17,7 @@ class PeopleController < ApplicationController
     if person.save
       render :json => person
     else
-      render :json => { :errors => person.errors.full_messages }, :status => 422
+      render :json => { :errors => person.errors }, :status => 422
     end
   end
 
@@ -26,7 +26,7 @@ class PeopleController < ApplicationController
     if person.update_attributes(person_params)
       render :json => person
     else
-      render :json => { :errors => person.errors.full_messages }, :status => 422
+      render :json => { :errors => person.errors }, :status => 422
     end
   end
 
