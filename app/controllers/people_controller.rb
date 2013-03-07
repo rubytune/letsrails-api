@@ -36,6 +36,6 @@ class PeopleController < ApplicationController
 
 protected
   def person_params
-    params.slice(:email, :first_name, :last_name, :password, :password_confirmation)
+    params.slice(:email, :first_name, :last_name, :password, :password_confirmation, :gender, :born_on, :city_id)
   end
 end
