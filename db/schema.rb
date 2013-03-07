@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130201023656) do
+ActiveRecord::Schema.define(:version => 20130307092827) do
 
   create_table "cities", :force => true do |t|
     t.integer  "country_id", :null => false
@@ -94,6 +94,9 @@ ActiveRecord::Schema.define(:version => 20130201023656) do
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "gender"
+    t.date     "born_on"
+    t.integer  "city_id"
   end
 
   add_index "people", ["email"], :name => "index_people_on_email", :unique => true
