@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307092827) do
+ActiveRecord::Schema.define(:version => 20130307105920) do
 
   create_table "cities", :force => true do |t|
     t.integer  "country_id", :null => false
@@ -63,14 +63,15 @@ ActiveRecord::Schema.define(:version => 20130307092827) do
   add_index "deal_images", ["deal_id"], :name => "index_deal_images_on_deal_id"
 
   create_table "deals", :force => true do |t|
-    t.integer  "city_id",         :null => false
-    t.string   "short_title",     :null => false
-    t.string   "long_title",      :null => false
-    t.text     "description",     :null => false
-    t.datetime "offer_starts_at", :null => false
-    t.datetime "offer_ends_at",   :null => false
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "city_id",                                  :null => false
+    t.string   "short_title",                              :null => false
+    t.string   "long_title",                               :null => false
+    t.text     "description",                              :null => false
+    t.datetime "offer_starts_at",                          :null => false
+    t.datetime "offer_ends_at",                            :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "type",            :default => "LocalDeal"
   end
 
   add_index "deals", ["city_id"], :name => "index_deals_on_city_id"

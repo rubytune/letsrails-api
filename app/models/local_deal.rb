@@ -1,0 +1,3 @@
+class LocalDeal < Deal
+  
+end
