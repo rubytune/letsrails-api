@@ -16,10 +16,10 @@ class Deal < ActiveRecord::Base
       if Deal.select(:type).uniq.collect(&:type).include? type
         where(:type => type)
       else
-        where(0)
+        where(false)
       end
     else
-      where(1)
+      scoped
     end
   end
 end
