@@ -1,10 +1,13 @@
-class CitiesController < ApplicationController
+class CitiesController < ApplicationController  
   def index
-    country = Country.find(params[:country_id])
-    render :json => country.cities.includes(:country).to_json(:include => [:country])
-  end
-
-  def show
-    render :json => City.includes(:country).find(params[:id]).to_json(:include => [:country])
+    if params[:country_id].present?
+      @cities = Country.find(params[:country_id]).cities.includes(:country).to_json(:include => [:country])
+    elsif params[:id].present?
+      @cities = City.includes(:country).find(params[:id]).to_json(:include => [:country])
+    else
+      @cities = City.includes(:country).all().to_json(:include => [:country])
+    end
+    
+    render :json => @cities
   end
 end
