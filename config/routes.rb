@@ -11,8 +11,7 @@ LetsRailsAPI::Application.routes.draw do
   get "/deals" => "deals#index"
 
   post "/authenticate" => "people#authenticate"
+  get  "/people/:id" => "people#show"
   post "/people" => "people#create"
-  put "/peoeple/:id" => "people#update"
-
-
+  put  "/people/:id" => "people#update"
 end
