@@ -11,8 +11,4 @@ class DealsController < ApplicationController
     render :json => @deals
   end
 
-  def show
-    render :json => Deal.includes(:deal_images, :options, :city => :country).find(params[:id]).to_json(:include => [:deal_images, :options])
-  end
-  
 end
