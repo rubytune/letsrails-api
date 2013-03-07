@@ -12,6 +12,7 @@ LetsRailsAPI::Application.routes.draw do
 
   post "/authenticate" => "people#authenticate"
   get  "/people/:id" => "people#show"
+  get  "/people" => "people#show"
   post "/people" => "people#create"
   put  "/people/:id" => "people#update"
 end

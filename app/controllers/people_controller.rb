@@ -31,7 +31,17 @@ class PeopleController < ApplicationController
   end
 
   def show
-    render :json => Person.find(params[:id])
+    person = if params[:id].present?
+      Person.find(params[:id])
+    else
+      Person.where(params.except(:controller, :action)).first
+    end
+
+    if person
+      render :json => person
+    else
+      render :json => {}
+    end
   end
 
 protected
