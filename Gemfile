@@ -7,10 +7,10 @@ gem 'base32-crockford'
 gem 'attr_encryptor'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'mysql2'
+gem 'nokogiri'
 
 group :development do
   gem 'httparty'
-  gem 'nokogiri'
   gem 'foreman'
 end
 
