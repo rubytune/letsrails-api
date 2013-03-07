@@ -1,0 +1,3 @@
+class EscapeDeal < Deal
+  
+end
