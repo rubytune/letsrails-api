@@ -7,11 +7,16 @@ gem 'base32-crockford'
 gem 'attr_encryptor'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'mysql2'
+gem 'nokogiri'
+gem 'httparty'
 
 group :development do
-  gem 'httparty'
-  gem 'nokogiri'
   gem 'foreman'
+end
+
+group :production do
+  gem 'pg'
+  gem 'unicorn'
 end
 
 group :assets do

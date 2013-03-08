@@ -10,6 +10,8 @@ LetsRailsAPI::Application.routes.draw do
   get "/cities/:city_id/deals" => "deals#index"
   get "/deals" => "deals#index"
 
+  get "/options/:id" => "options#show"
+  
   post "/authenticate" => "people#authenticate"
   get  "/people/:id" => "people#show"
   get  "/people" => "people#show"

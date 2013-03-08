@@ -1,1 +1,1 @@
-web: rails s -p 2601
+web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb
